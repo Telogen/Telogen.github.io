@@ -81,6 +81,45 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo笔记4-设置七牛云+PicGo图床</title>
+    <url>/blog/hexo_note4.html</url>
+    <content><![CDATA[<h2 id="动机和图床知识介绍"><a href="#动机和图床知识介绍" class="headerlink" title="动机和图床知识介绍"></a>动机和图床知识介绍</h2><p><a href="https://post.smzdm.com/p/a5kledr3/">https://post.smzdm.com/p/a5kledr3/</a></p>
+<h2 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h2><ul>
+<li><p>对象存储 -&gt; 空间管理 -&gt; 新建空间（即bucket）-&gt; 存储空间名称<strong>【随意】</strong> -&gt; 存储区域选<strong>【国内】</strong> -&gt; 访问控制<strong>【私有】</strong></p>
+</li>
+<li><p>点击刚刚创建的空间 -&gt; 域名管理 -&gt; 自定义源站域名 -&gt; 绑定域名</p>
+</li>
+</ul>
+<blockquote>
+<p>自定义 CDN 加速域名必须要国内ICP备案的域名，很麻烦</p>
+</blockquote>
+<ul>
+<li>输入<strong>【img.tianlejin.top】</strong>这个子域名</li>
+</ul>
+<blockquote>
+<p>此时CNAME显示为<strong>【未配置】</strong>，复制CMANE地址<strong>【iovip-z0.qiniuio.com】</strong></p>
+</blockquote>
+<h2 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h2><ul>
+<li>域名控制台 -&gt; 解析 -&gt; 添加记录 -&gt; 记录类型<strong>【CNAME-】</strong> -&gt; 主机记录<strong>【img】</strong> -&gt; 记录值<strong>【iovip-z0.qiniuio.com】</strong> -&gt; 确定</li>
+</ul>
+<h2 id="回到七牛云"><a href="#回到七牛云" class="headerlink" title="回到七牛云"></a>回到七牛云</h2><ul>
+<li>点击刷新，CNAME显示为【已配置】</li>
+</ul>
+<h2 id="配置PicGo和Typora"><a href="#配置PicGo和Typora" class="headerlink" title="配置PicGo和Typora"></a>配置PicGo和Typora</h2><p>参考：<a href="https://blog.csdn.net/PQ781826/article/details/139277933">https://blog.csdn.net/PQ781826/article/details/139277933</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://post.smzdm.com/p/a5kledr3/">https://post.smzdm.com/p/a5kledr3/</a><br><a href="https://blog.csdn.net/PQ781826/article/details/139277933">https://blog.csdn.net/PQ781826/article/details/139277933</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+        <tag>图床</tag>
+        <tag>域名</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo笔记3-主题及其他个性化设置</title>
     <url>/blog/hexo_note3.html</url>
     <content><![CDATA[<h2 id="🎨-更换主题"><a href="#🎨-更换主题" class="headerlink" title="🎨 更换主题"></a>🎨 更换主题</h2><h3 id="安装主题（以-Butterfly-为例）"><a href="#安装主题（以-Butterfly-为例）" class="headerlink" title="安装主题（以 Butterfly 为例）"></a>安装主题（以 Butterfly 为例）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
@@ -124,45 +163,6 @@
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
         <tag>Bitterfly主题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo笔记4-设置七牛云+PicGo图床</title>
-    <url>/blog/hexo_note4.html</url>
-    <content><![CDATA[<h2 id="动机和图床知识介绍"><a href="#动机和图床知识介绍" class="headerlink" title="动机和图床知识介绍"></a>动机和图床知识介绍</h2><p><a href="https://post.smzdm.com/p/a5kledr3/">https://post.smzdm.com/p/a5kledr3/</a></p>
-<h2 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h2><ul>
-<li><p>对象存储 -&gt; 空间管理 -&gt; 新建空间（即bucket）-&gt; 存储空间名称<strong>【随意】</strong> -&gt; 存储区域选<strong>【国内】</strong> -&gt; 访问控制<strong>【私有】</strong></p>
-</li>
-<li><p>点击刚刚创建的空间 -&gt; 域名管理 -&gt; 自定义源站域名 -&gt; 绑定域名</p>
-</li>
-</ul>
-<blockquote>
-<p>自定义 CDN 加速域名必须要国内ICP备案的域名，很麻烦</p>
-</blockquote>
-<ul>
-<li>输入<strong>【img.tianlejin.top】</strong>这个子域名</li>
-</ul>
-<blockquote>
-<p>此时CNAME显示为<strong>【未配置】</strong>，复制CMANE地址<strong>【iovip-z0.qiniuio.com】</strong></p>
-</blockquote>
-<h2 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h2><ul>
-<li>域名控制台 -&gt; 解析 -&gt; 添加记录 -&gt; 记录类型<strong>【CNAME-】</strong> -&gt; 主机记录<strong>【img】</strong> -&gt; 记录值<strong>【iovip-z0.qiniuio.com】</strong> -&gt; 确定</li>
-</ul>
-<h2 id="回到七牛云"><a href="#回到七牛云" class="headerlink" title="回到七牛云"></a>回到七牛云</h2><ul>
-<li>点击刷新，CNAME显示为【已配置】</li>
-</ul>
-<h2 id="配置PicGo和Typora"><a href="#配置PicGo和Typora" class="headerlink" title="配置PicGo和Typora"></a>配置PicGo和Typora</h2><p>参考：<a href="https://blog.csdn.net/PQ781826/article/details/139277933">https://blog.csdn.net/PQ781826/article/details/139277933</a></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://post.smzdm.com/p/a5kledr3/">https://post.smzdm.com/p/a5kledr3/</a><br><a href="https://blog.csdn.net/PQ781826/article/details/139277933">https://blog.csdn.net/PQ781826/article/details/139277933</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客搭建</tag>
-        <tag>图床</tag>
-        <tag>域名</tag>
       </tags>
   </entry>
   <entry>
