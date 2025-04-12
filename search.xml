@@ -34,40 +34,32 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo笔记3-主题及其他个性化设置</title>
-    <url>/blog/hexo_note3.html</url>
-    <content><![CDATA[<h2 id="🎨-更换主题"><a href="#🎨-更换主题" class="headerlink" title="🎨 更换主题"></a>🎨 更换主题</h2><h3 id="安装主题（以-Butterfly-为例）"><a href="#安装主题（以-Butterfly-为例）" class="headerlink" title="安装主题（以 Butterfly 为例）"></a>安装主题（以 Butterfly 为例）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改主配置文件-config-yml："><a href="#修改主配置文件-config-yml：" class="headerlink" title="修改主配置文件 _config.yml："></a>修改主配置文件 <code>_config.yml</code>：</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure>
-<p><code>_config.yml</code>中的其他配置可以一并进行修改，可以把文件内容丢给AI让其帮忙解释</p>
-<h3 id="安装依赖（Butterfly-需要）"><a href="#安装依赖（Butterfly-需要）" class="headerlink" title="安装依赖（Butterfly 需要）"></a>安装依赖（Butterfly 需要）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="⚙️-butterfly主题设置（在-themes-butterfly-config-yml-中完成）"><a href="#⚙️-butterfly主题设置（在-themes-butterfly-config-yml-中完成）" class="headerlink" title="⚙️ butterfly主题设置（在 themes/butterfly/_config.yml 中完成）"></a>⚙️ butterfly主题设置（在 <code>themes/butterfly/_config.yml</code> 中完成）</h2><h3 id="导航栏设置"><a href="#导航栏设置" class="headerlink" title="导航栏设置"></a>导航栏设置</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">博客:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="string">摄影:</span> <span class="string">/photography/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-camera</span></span><br><span class="line">  <span class="string">关于我:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-user</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>还要使用<code>hexo new</code>一并创建对应的页面文件夹：</li>
+    <title>Hexo笔记4-设置七牛云+PicGo图床</title>
+    <url>/blog/hexo_note4.html</url>
+    <content><![CDATA[<h2 id="动机和图床知识介绍"><a href="#动机和图床知识介绍" class="headerlink" title="动机和图床知识介绍"></a>动机和图床知识介绍</h2><p><a href="https://post.smzdm.com/p/a5kledr3/">https://post.smzdm.com/p/a5kledr3/</a></p>
+<h2 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h2><ul>
+<li><p>对象存储 -&gt; 空间管理 -&gt; 新建空间（即bucket）-&gt; 存储空间名称<strong>【随意】</strong> -&gt; 存储区域选<strong>【国内】</strong> -&gt; 访问控制<strong>【私有】</strong></p>
+</li>
+<li><p>点击刚刚创建的空间 -&gt; 域名管理 -&gt; 自定义源站域名 -&gt; 绑定域名</p>
+</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;页面名&quot;</span></span><br></pre></td></tr></table></figure>
-<p>📌 会生成：<code>source/页面名/index.md</code></p>
-<h3 id="站点图标-favicon"><a href="#站点图标-favicon" class="headerlink" title="站点图标 favicon"></a>站点图标 favicon</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span> <span class="string">/img/favicon.png</span></span><br></pre></td></tr></table></figure>
-<p>把 <code>favicon.png</code> 放到butterfly的 <code>source/img/</code> 目录下</p>
-<h3 id="头像与侧边栏"><a href="#头像与侧边栏" class="headerlink" title="头像与侧边栏"></a>头像与侧边栏</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="attr">img:</span> <span class="string">/img/avatar.jpg</span></span><br><span class="line">  <span class="attr">effect:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="社交图标展示"><a href="#社交图标展示" class="headerlink" title="社交图标展示"></a>社交图标展示</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">fab fa-github:</span> <span class="string">https://github.com/example</span> <span class="string">||</span> <span class="string">GitHub</span> <span class="string">||</span> <span class="string">&#x27;#24292e&#x27;</span></span><br><span class="line">  <span class="attr">fab fa-bilibili:</span> <span class="string">https://space.bilibili.com/example</span> <span class="string">||</span> <span class="string">B站</span> <span class="string">||</span> <span class="string">&#x27;#fb7299&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="首页展示设置"><a href="#首页展示设置" class="headerlink" title="首页展示设置"></a>首页展示设置</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">index_layout:</span> <span class="number">3</span>           <span class="comment"># 首页文章排布样式</span></span><br><span class="line"><span class="attr">index_post_content:</span></span><br><span class="line">  <span class="attr">method:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">length:</span> <span class="number">500</span>             <span class="comment"># 首页文章摘要字数</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="关于themes-butterfly-config-yml中的其他配置，可以把文件内容直接丢给AI让其帮忙解释并修改"><a href="#关于themes-butterfly-config-yml中的其他配置，可以把文件内容直接丢给AI让其帮忙解释并修改" class="headerlink" title="关于themes/butterfly/_config.yml中的其他配置，可以把文件内容直接丢给AI让其帮忙解释并修改"></a>关于<code>themes/butterfly/_config.yml</code>中的其他配置，可以把文件内容直接丢给AI让其帮忙解释并修改</h3><hr>
-<h2 id="🔍站内搜索功能"><a href="#🔍站内搜索功能" class="headerlink" title="🔍站内搜索功能"></a>🔍站内搜索功能</h2><h3 id="安装搜索数据库插件："><a href="#安装搜索数据库插件：" class="headerlink" title="安装搜索数据库插件："></a>安装搜索数据库插件：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改-Hexo-主配置文件-config-yml，添加搜索配置："><a href="#修改-Hexo-主配置文件-config-yml，添加搜索配置：" class="headerlink" title="修改 Hexo 主配置文件 _config.yml，添加搜索配置："></a>修改 Hexo 主配置文件 <code>_config.yml</code>，添加搜索配置：</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改主题配置文件-themes-butterfly-config-yml，启用本地搜索："><a href="#修改主题配置文件-themes-butterfly-config-yml，启用本地搜索：" class="headerlink" title="修改主题配置文件 themes/butterfly/_config.yml，启用本地搜索："></a>修改主题配置文件 <code>themes/butterfly/_config.yml</code>，启用本地搜索：</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">use:</span> <span class="string">local_search</span>             <span class="comment"># 使用本地搜索</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">搜索一下...</span>      <span class="comment"># 搜索框提示文字（你可以自定义）</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">local_search:</span></span><br><span class="line">    <span class="attr">preload:</span> <span class="literal">true</span>              <span class="comment"># 页面加载时预先加载 search.xml</span></span><br><span class="line">    <span class="attr">top_n_per_article:</span> <span class="number">3</span>       <span class="comment"># 每篇文章最多显示 3 个匹配结果（-1 为不限制）</span></span><br><span class="line">    <span class="attr">unescape:</span> <span class="literal">true</span>             <span class="comment"># 解码 HTML 实体字符（比如 &amp;gt; 显示为 &gt;）</span></span><br><span class="line">    <span class="attr">CDN:</span>                      <span class="comment"># 留空表示使用本地 js 文件（不建议设置）</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>现在就可以在页面右上角看到搜索图标 🔍，支持全文搜索博客内容。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://butterfly.js.org/">https://butterfly.js.org/</a></p>
+<blockquote>
+<p>自定义 CDN 加速域名必须要国内ICP备案的域名，很麻烦</p>
+</blockquote>
+<ul>
+<li>输入<strong>【img.tianlejin.top】</strong>这个子域名</li>
+</ul>
+<blockquote>
+<p>此时CNAME显示为<strong>【未配置】</strong>，复制CMANE地址<strong>【iovip-z0.qiniuio.com】</strong></p>
+</blockquote>
+<h2 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h2><ul>
+<li>域名控制台 -&gt; 解析 -&gt; 添加记录 -&gt; 记录类型<strong>【CNAME-】</strong> -&gt; 主机记录<strong>【img】</strong> -&gt; 记录值<strong>【iovip-z0.qiniuio.com】</strong> -&gt; 确定</li>
+</ul>
+<h2 id="回到七牛云"><a href="#回到七牛云" class="headerlink" title="回到七牛云"></a>回到七牛云</h2><ul>
+<li>点击刷新，CNAME显示为【已配置】</li>
+</ul>
+<h2 id="配置PicGo和Typora"><a href="#配置PicGo和Typora" class="headerlink" title="配置PicGo和Typora"></a>配置PicGo和Typora</h2><p>参考：<a href="https://blog.csdn.net/PQ781826/article/details/139277933">https://blog.csdn.net/PQ781826/article/details/139277933</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://post.smzdm.com/p/a5kledr3/">https://post.smzdm.com/p/a5kledr3/</a><br><a href="https://blog.csdn.net/PQ781826/article/details/139277933">https://blog.csdn.net/PQ781826/article/details/139277933</a></p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -76,7 +68,8 @@
       <tags>
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
-        <tag>Bitterfly主题</tag>
+        <tag>图床</tag>
+        <tag>域名</tag>
       </tags>
   </entry>
   <entry>
@@ -124,6 +117,52 @@
       <tags>
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo笔记3-主题及其他个性化设置</title>
+    <url>/blog/hexo_note3.html</url>
+    <content><![CDATA[<h2 id="🎨-更换主题"><a href="#🎨-更换主题" class="headerlink" title="🎨 更换主题"></a>🎨 更换主题</h2><h3 id="安装主题（以-Butterfly-为例）"><a href="#安装主题（以-Butterfly-为例）" class="headerlink" title="安装主题（以 Butterfly 为例）"></a>安装主题（以 Butterfly 为例）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改主配置文件-config-yml："><a href="#修改主配置文件-config-yml：" class="headerlink" title="修改主配置文件 _config.yml："></a>修改主配置文件 <code>_config.yml</code>：</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure>
+<p><code>_config.yml</code>中的其他配置可以一并进行修改，可以把文件内容丢给AI让其帮忙解释</p>
+<h3 id="安装依赖（Butterfly-需要）"><a href="#安装依赖（Butterfly-需要）" class="headerlink" title="安装依赖（Butterfly 需要）"></a>安装依赖（Butterfly 需要）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="⚙️-butterfly主题设置（在-themes-butterfly-config-yml-中完成）"><a href="#⚙️-butterfly主题设置（在-themes-butterfly-config-yml-中完成）" class="headerlink" title="⚙️ butterfly主题设置（在 themes/butterfly/_config.yml 中完成）"></a>⚙️ butterfly主题设置（在 <code>themes/butterfly/_config.yml</code> 中完成）</h2><h3 id="导航栏设置"><a href="#导航栏设置" class="headerlink" title="导航栏设置"></a>导航栏设置</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">博客:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="string">摄影:</span> <span class="string">/photography/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-camera</span></span><br><span class="line">  <span class="string">关于我:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-user</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>还要使用<code>hexo new</code>一并创建对应的页面文件夹：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;页面名&quot;</span></span><br></pre></td></tr></table></figure>
+<p>📌 会生成：<code>source/页面名/index.md</code></p>
+<h3 id="站点图标-favicon"><a href="#站点图标-favicon" class="headerlink" title="站点图标 favicon"></a>站点图标 favicon</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span> <span class="string">/img/favicon.png</span></span><br></pre></td></tr></table></figure>
+<p>把 <code>favicon.png</code> 放到butterfly的 <code>source/img/</code> 目录下</p>
+<h3 id="头像与侧边栏"><a href="#头像与侧边栏" class="headerlink" title="头像与侧边栏"></a>头像与侧边栏</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="attr">img:</span> <span class="string">/img/avatar.jpg</span></span><br><span class="line">  <span class="attr">effect:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="社交图标展示"><a href="#社交图标展示" class="headerlink" title="社交图标展示"></a>社交图标展示</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">fab fa-github:</span> <span class="string">https://github.com/example</span> <span class="string">||</span> <span class="string">GitHub</span> <span class="string">||</span> <span class="string">&#x27;#24292e&#x27;</span></span><br><span class="line">  <span class="attr">fab fa-bilibili:</span> <span class="string">https://space.bilibili.com/example</span> <span class="string">||</span> <span class="string">B站</span> <span class="string">||</span> <span class="string">&#x27;#fb7299&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="首页展示设置"><a href="#首页展示设置" class="headerlink" title="首页展示设置"></a>首页展示设置</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">index_layout:</span> <span class="number">3</span>           <span class="comment"># 首页文章排布样式</span></span><br><span class="line"><span class="attr">index_post_content:</span></span><br><span class="line">  <span class="attr">method:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">length:</span> <span class="number">500</span>             <span class="comment"># 首页文章摘要字数</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="关于themes-butterfly-config-yml中的其他配置，可以把文件内容直接丢给AI让其帮忙解释并修改"><a href="#关于themes-butterfly-config-yml中的其他配置，可以把文件内容直接丢给AI让其帮忙解释并修改" class="headerlink" title="关于themes/butterfly/_config.yml中的其他配置，可以把文件内容直接丢给AI让其帮忙解释并修改"></a>关于<code>themes/butterfly/_config.yml</code>中的其他配置，可以把文件内容直接丢给AI让其帮忙解释并修改</h3><hr>
+<h2 id="🔍站内搜索功能"><a href="#🔍站内搜索功能" class="headerlink" title="🔍站内搜索功能"></a>🔍站内搜索功能</h2><h3 id="安装搜索数据库插件："><a href="#安装搜索数据库插件：" class="headerlink" title="安装搜索数据库插件："></a>安装搜索数据库插件：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改-Hexo-主配置文件-config-yml，添加搜索配置："><a href="#修改-Hexo-主配置文件-config-yml，添加搜索配置：" class="headerlink" title="修改 Hexo 主配置文件 _config.yml，添加搜索配置："></a>修改 Hexo 主配置文件 <code>_config.yml</code>，添加搜索配置：</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改主题配置文件-themes-butterfly-config-yml，启用本地搜索："><a href="#修改主题配置文件-themes-butterfly-config-yml，启用本地搜索：" class="headerlink" title="修改主题配置文件 themes/butterfly/_config.yml，启用本地搜索："></a>修改主题配置文件 <code>themes/butterfly/_config.yml</code>，启用本地搜索：</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">use:</span> <span class="string">local_search</span>             <span class="comment"># 使用本地搜索</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">搜索一下...</span>      <span class="comment"># 搜索框提示文字（你可以自定义）</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">local_search:</span></span><br><span class="line">    <span class="attr">preload:</span> <span class="literal">true</span>              <span class="comment"># 页面加载时预先加载 search.xml</span></span><br><span class="line">    <span class="attr">top_n_per_article:</span> <span class="number">3</span>       <span class="comment"># 每篇文章最多显示 3 个匹配结果（-1 为不限制）</span></span><br><span class="line">    <span class="attr">unescape:</span> <span class="literal">true</span>             <span class="comment"># 解码 HTML 实体字符（比如 &amp;gt; 显示为 &gt;）</span></span><br><span class="line">    <span class="attr">CDN:</span>                      <span class="comment"># 留空表示使用本地 js 文件（不建议设置）</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>现在就可以在页面右上角看到搜索图标 🔍，支持全文搜索博客内容。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://butterfly.js.org/">https://butterfly.js.org/</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+        <tag>Bitterfly主题</tag>
       </tags>
   </entry>
   <entry>
@@ -211,45 +250,6 @@
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
         <tag>域名</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo笔记4-设置七牛云+PicGo图床</title>
-    <url>/blog/hexo_note4.html</url>
-    <content><![CDATA[<h2 id="动机和图床知识介绍"><a href="#动机和图床知识介绍" class="headerlink" title="动机和图床知识介绍"></a>动机和图床知识介绍</h2><p><a href="https://post.smzdm.com/p/a5kledr3/">https://post.smzdm.com/p/a5kledr3/</a></p>
-<h2 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h2><ul>
-<li><p>对象存储 -&gt; 空间管理 -&gt; 新建空间（即bucket）-&gt; 存储空间名称<strong>【随意】</strong> -&gt; 存储区域选<strong>【国内】</strong> -&gt; 访问控制<strong>【私有】</strong></p>
-</li>
-<li><p>点击刚刚创建的空间 -&gt; 域名管理 -&gt; 自定义源站域名 -&gt; 绑定域名</p>
-</li>
-</ul>
-<blockquote>
-<p>自定义 CDN 加速域名必须要国内ICP备案的域名，很麻烦</p>
-</blockquote>
-<ul>
-<li>输入<strong>【img.tianlejin.top】</strong>这个子域名</li>
-</ul>
-<blockquote>
-<p>此时CNAME显示为<strong>【未配置】</strong>，复制CMANE地址<strong>【iovip-z0.qiniuio.com】</strong></p>
-</blockquote>
-<h2 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h2><ul>
-<li>域名控制台 -&gt; 解析 -&gt; 添加记录 -&gt; 记录类型<strong>【CNAME-】</strong> -&gt; 主机记录<strong>【img】</strong> -&gt; 记录值<strong>【iovip-z0.qiniuio.com】</strong> -&gt; 确定</li>
-</ul>
-<h2 id="回到七牛云"><a href="#回到七牛云" class="headerlink" title="回到七牛云"></a>回到七牛云</h2><ul>
-<li>点击刷新，CNAME显示为【已配置】</li>
-</ul>
-<h2 id="配置PicGo和Typora"><a href="#配置PicGo和Typora" class="headerlink" title="配置PicGo和Typora"></a>配置PicGo和Typora</h2><p>参考：<a href="https://blog.csdn.net/PQ781826/article/details/139277933">https://blog.csdn.net/PQ781826/article/details/139277933</a></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://post.smzdm.com/p/a5kledr3/">https://post.smzdm.com/p/a5kledr3/</a><br><a href="https://blog.csdn.net/PQ781826/article/details/139277933">https://blog.csdn.net/PQ781826/article/details/139277933</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客搭建</tag>
-        <tag>域名</tag>
-        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -344,6 +344,35 @@
       <tags>
         <tag>Hexo</tag>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 exiftool 批量按拍摄时间重命名照片</title>
+    <url>/blog/exiftool.html</url>
+    <content><![CDATA[<p>在整理照片时，是否遇到过一堆混乱命名的文件？<br>比如 <code>IMG_1234.JPG</code>、<code>DSC0001.JPG</code>……<br>其实，我们可以用一行命令，就把所有照片按「拍摄时间」重命名！</p>
+<p>本文介绍一个强大却小巧的命令行工具：<strong>ExifTool</strong>，让你的照片重命名井井有条！</p>
+<h2 id="💡-什么是-ExifTool？"><a href="#💡-什么是-ExifTool？" class="headerlink" title="💡 什么是 ExifTool？"></a>💡 什么是 ExifTool？</h2><p><code>exiftool</code> 是一个跨平台的命令行工具，可以读取和写入媒体文件中的元数据（如照片的拍摄时间、设备信息、GPS 等）。<br>我们可以用它从 EXIF 中提取拍摄时间并重命名文件。</p>
+<h2 id="🛠-安装-ExifTool（以-macOS-为例）"><a href="#🛠-安装-ExifTool（以-macOS-为例）" class="headerlink" title="🛠 安装 ExifTool（以 macOS 为例）"></a>🛠 安装 ExifTool（以 macOS 为例）</h2><p>官网下载：<a href="https://exiftool.org/">https://exiftool.org/</a></p>
+<h2 id="🌰-例子：将2025-03文件夹内的所有文件按时间戳重命名，精确到秒"><a href="#🌰-例子：将2025-03文件夹内的所有文件按时间戳重命名，精确到秒" class="headerlink" title="🌰 例子：将2025-03文件夹内的所有文件按时间戳重命名，精确到秒"></a>🌰 例子：将2025-03文件夹内的所有文件按时间戳重命名，精确到秒</h2><p>以下命令将当前目录下的所有 JPG 文件，重命名为拍摄时间的格式，例如 <code>20250312_153045.jpg</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /Users/tianlejin/Desktop/2025-03</span><br><span class="line">exiftool <span class="string">&#x27;-FileName&lt;CreateDate&#x27;</span> -d <span class="string">&quot;%Y%m%d_%H%M%S%%-c.%%e&quot;</span> *.JPEG</span><br></pre></td></tr></table></figure>
+
+<h3 id="参数解释："><a href="#参数解释：" class="headerlink" title="参数解释："></a>参数解释：</h3><ul>
+<li><code>-FileName&lt;CreateDate</code>：将文件名设置为照片的拍摄时间。</li>
+<li><code>-d &quot;%Y%m%d_%H%M%S&quot;</code>：设置重命名的时间格式（年月日_时分秒）。</li>
+<li><code>%%-c</code>：如果有重名的文件，会自动加上 <code>-1</code>、<code>-2</code> 等后缀。</li>
+<li><code>%%e</code>：保留原文件扩展名。</li>
+<li><code>*.JPEG</code>：只处理 JPEG 格式文件，其他格式可手动修改。</li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://exiftool.org/">https://exiftool.org/</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>实用工具</category>
+      </categories>
+      <tags>
+        <tag>exiftool</tag>
+        <tag>批量重命名</tag>
+        <tag>照片整理</tag>
       </tags>
   </entry>
 </search>
