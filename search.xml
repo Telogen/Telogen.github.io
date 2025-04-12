@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hexo笔记1-Hexo的安装和博客初始化</title>
-    <url>//hexo_note1.html</url>
+    <url>/blog/hexo_note1.html</url>
     <content><![CDATA[<h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁、高效的<strong>静态</strong>博客框架，适合喜欢 Markdown 的人。</p>
 <h2 id="安装步骤（基于M4-Mac-mini）"><a href="#安装步骤（基于M4-Mac-mini）" class="headerlink" title="安装步骤（基于M4 Mac mini）"></a>安装步骤（基于M4 Mac mini）</h2><h3 id="1-下载Node-js并安装"><a href="#1-下载Node-js并安装" class="headerlink" title="1. 下载Node.js并安装"></a>1. 下载Node.js并安装</h3><p><a href="https://nodejs.org/zh-cn/download">https://nodejs.org/zh-cn/download</a></p>
 <h3 id="2-初始化git"><a href="#2-初始化git" class="headerlink" title="2. 初始化git"></a>2. 初始化git</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置全局 Git 用户名和邮箱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;github账户名称&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;github账户邮箱&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 SSH 密钥</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;github账户邮箱&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示 SSH 公钥</span></span><br><span class="line"><span class="built_in">cat</span> /Users/tianlejin/.ssh/id_rsa.pub</span><br><span class="line"><span class="comment"># 进入 Settings 页面，选择左边栏的 SSH and GPG keys，点击 New SSH key，将以上输出复制到github网页端的SSH key</span></span><br></pre></td></tr></table></figure>
@@ -28,13 +28,13 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo笔记</tag>
+        <tag>Hexo</tag>
         <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
     <title>Hexo笔记2-Hexo项目文件说明</title>
-    <url>//hexo_note2.html</url>
+    <url>/blog/hexo_note2.html</url>
     <content><![CDATA[<p>在使用 Hexo 搭建博客时，我们会看到项目目录下自动生成了很多文件和文件夹。理解它们的作用有助于后续的维护与定制。这篇笔记记录一下各个核心文件&#x2F;文件夹的作用。</p>
 <h2 id="🗂️-Hexo-项目结构说明"><a href="#🗂️-Hexo-项目结构说明" class="headerlink" title="🗂️ Hexo 项目结构说明"></a>🗂️ Hexo 项目结构说明</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">your-blog/</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds/</span><br><span class="line">├── source/</span><br><span class="line">│   ├── _posts/</span><br><span class="line">│   └── ...（你自定义的静态资源和页面）</span><br><span class="line">├── themes/</span><br><span class="line">├── public/</span><br><span class="line">├── node_modules/</span><br></pre></td></tr></table></figure>
 
@@ -75,13 +75,13 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo笔记</tag>
+        <tag>Hexo</tag>
         <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
     <title>Hexo笔记3-主题及其他个性化设置</title>
-    <url>//hexo_note3.html</url>
+    <url>/blog/hexo_note3.html</url>
     <content><![CDATA[<h2 id="🎨-更换主题"><a href="#🎨-更换主题" class="headerlink" title="🎨 更换主题"></a>🎨 更换主题</h2><h3 id="安装主题（以-Butterfly-为例）"><a href="#安装主题（以-Butterfly-为例）" class="headerlink" title="安装主题（以 Butterfly 为例）"></a>安装主题（以 Butterfly 为例）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
 
 <h3 id="修改主配置文件-config-yml："><a href="#修改主配置文件-config-yml：" class="headerlink" title="修改主配置文件 _config.yml："></a>修改主配置文件 <code>_config.yml</code>：</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure>
@@ -119,13 +119,13 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo笔记</tag>
+        <tag>Hexo</tag>
         <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
     <title>Hexo笔记4-设置七牛云+PicGo图床</title>
-    <url>//hexo_note4.html</url>
+    <url>/blog/hexo_note4.html</url>
     <content><![CDATA[<h2 id="动机和图床知识介绍"><a href="#动机和图床知识介绍" class="headerlink" title="动机和图床知识介绍"></a>动机和图床知识介绍</h2><p><a href="https://post.smzdm.com/p/a5kledr3/">https://post.smzdm.com/p/a5kledr3/</a></p>
 <h2 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h2><ul>
 <li><p>对象存储 -&gt; 空间管理 -&gt; 新建空间（即bucket）-&gt; 存储空间名称<strong>【随意】</strong> -&gt; 存储区域选<strong>【国内】</strong> -&gt; 访问控制<strong>【私有】</strong></p>
@@ -155,8 +155,187 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo笔记</tag>
+        <tag>Hexo</tag>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo笔记5-博客绑定自定义域名</title>
+    <url>/blog/hexo_note5.html</url>
+    <content><![CDATA[<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul>
+<li>已成功搭建 Hexo 博客，并部署到 GitHub Pages，例如 <code>https://telogen.github.io</code></li>
+<li>已在域名注册商（如阿里云）购买域名，例如 <code>tianlejin.top</code></li>
+</ul>
+<hr>
+<h2 id="在-GitHub-仓库设置域名"><a href="#在-GitHub-仓库设置域名" class="headerlink" title="在 GitHub 仓库设置域名"></a>在 GitHub 仓库设置域名</h2><ol>
+<li>打开博客的github仓库（通常是 <code>telogen.github.io</code>）</li>
+<li>点击 <code>Settings &gt; Pages</code></li>
+<li>在 <strong>Custom domain</strong> 中填写你的域名：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tianlejin.top</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>点击保存（Save），此时仓库根目录会自动生成一个 <code>CNAME</code> 文件，内容为：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tianlejin.top</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="配置域名解析（阿里云为例）"><a href="#配置域名解析（阿里云为例）" class="headerlink" title="配置域名解析（阿里云为例）"></a>配置域名解析（阿里云为例）</h2><p>登录 <a href="https://dns.console.aliyun.com/">阿里云控制台</a> 进入域名解析设置，为主域名添加以下 <strong>A记录</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>记录类型</th>
+<th>主机记录</th>
+<th>记录值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>@</td>
+<td>185.199.108.153</td>
+<td>GitHub Pages IP</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>185.199.109.153</td>
+<td>GitHub Pages IP</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>185.199.110.153</td>
+<td>GitHub Pages IP</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>185.199.111.153</td>
+<td>GitHub Pages IP</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>@</code> 表示主域名，即 <code>tianlejin.top</code> 本身，不带任何子域。</p>
+</blockquote>
+<p><strong>⚠️ 注意：不要使用 CNAME 记录指向 <code>username.github.io</code>，主域名建议只用 A 记录。</strong></p>
+<hr>
+<h2 id="配置-Hexo-的-config-yml"><a href="#配置-Hexo-的-config-yml" class="headerlink" title="配置 Hexo 的 _config.yml"></a>配置 Hexo 的 <code>_config.yml</code></h2><p>打开 Hexo 根目录下的 <code>_config.yml</code> 文件，修改如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://tianlejin.top</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="添加-CNAME-文件（若未自动生成）"><a href="#添加-CNAME-文件（若未自动生成）" class="headerlink" title="添加 CNAME 文件（若未自动生成）"></a>添加 CNAME 文件（若未自动生成）</h2><p>确保 source&#x2F; 目录下有一个名为 CNAME 的文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tianlejin.top</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="测试DNS是否生效"><a href="#测试DNS是否生效" class="headerlink" title="测试DNS是否生效"></a>测试DNS是否生效</h2><p>在终端使用命令查看解析状态：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nslookup tianlejin.top</span><br></pre></td></tr></table></figure>
+<p>返回以下地址表示解析成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Non-authoritative answer:</span><br><span class="line">Name:	tianlejin.top</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:	tianlejin.top</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:	tianlejin.top</span><br><span class="line">Address: 185.199.108.153</span><br><span class="line">Name:	tianlejin.top</span><br><span class="line">Address: 185.199.111.153</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="启用-HTTPS（推荐）"><a href="#启用-HTTPS（推荐）" class="headerlink" title="启用 HTTPS（推荐）"></a>启用 HTTPS（推荐）</h2><p>在 GitHub 仓库的 Settings &gt; Pages 页面，确保勾选 Enforce HTTPS。若暂时灰色，可等待 DNS 生效后再刷新开启。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo笔记6-Hexo博客的type字段</title>
+    <url>/blog/hexo_note6.html</url>
+    <content><![CDATA[<p>在使用 Hexo 搭建博客时，除了常规的文章（post），我们还常常需要创建各种独立页面，例如“关于我”、“归档”、“标签”、“分类”等。这些页面背后都有一个核心概念 —— <code>type</code>。本篇文章将全面梳理 Hexo 页面中 <code>type</code> 的作用与常见类型，帮助你更好地定制属于自己的博客结构。</p>
+<hr>
+<h2 id="🧠-什么是-type？"><a href="#🧠-什么是-type？" class="headerlink" title="🧠 什么是 type？"></a>🧠 什么是 <code>type</code>？</h2><p>在 Hexo 中，每个页面（Page）都会有一个 <code>type</code> 属性，用于告诉 Hexo 或主题如何渲染这个页面。它相当于是页面的“身份标签”。</p>
+<p>如果不指定 <code>type</code>，Hexo 默认使用 <code>page</code> 或 <code>post</code> 类型进行处理。</p>
+<hr>
+<h2 id="📦-常见的-type-类型"><a href="#📦-常见的-type-类型" class="headerlink" title="📦 常见的 type 类型"></a>📦 常见的 <code>type</code> 类型</h2><table>
+<thead>
+<tr>
+<th><code>type</code> 值</th>
+<th>用途说明</th>
+<th>是否自动识别</th>
+<th>常见路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>posts</code></td>
+<td>默认值，表示这是文章（Post）</td>
+<td>✅ 是</td>
+<td><code>source/_posts/*.md</code></td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>普通独立页面，如 about、links 等</td>
+<td>✅ 是</td>
+<td><code>source/about/index.md</code> 等</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>标签页面，展示所有标签和相关文章</td>
+<td>❌ 否</td>
+<td><code>source/tags/index.md</code></td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td>分类页面，展示所有分类和相关文章</td>
+<td>❌ 否</td>
+<td><code>source/categories/index.md</code></td>
+</tr>
+<tr>
+<td><code>archive</code></td>
+<td>一些主题中用于归档页</td>
+<td>❌ 否</td>
+<td><code>/archives/</code></td>
+</tr>
+<tr>
+<td><code>links</code></td>
+<td>友链页面，依赖主题支持</td>
+<td>❌ 否</td>
+<td><code>source/links/index.md</code></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>留言板页面，依赖主题支持</td>
+<td>❌ 否</td>
+<td><code>source/message/index.md</code></td>
+</tr>
+<tr>
+<td><code>custom</code></td>
+<td>你自定义的任何页面（如 gallary）</td>
+<td>❌ 否</td>
+<td>需配合主题中的模板渲染</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="✍️-创建一个带-type-的页面示例"><a href="#✍️-创建一个带-type-的页面示例" class="headerlink" title="✍️ 创建一个带 type 的页面示例"></a>✍️ 创建一个带 <code>type</code> 的页面示例</h2><p>以创建标签页为例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>然后编辑 <code>source/tags/index.md</code>，加入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2025-04-12</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="🔍-如何查看主题支持的-type？"><a href="#🔍-如何查看主题支持的-type？" class="headerlink" title="🔍 如何查看主题支持的 type？"></a>🔍 如何查看主题支持的 <code>type</code>？</h2><p>你可以查看 <code>themes/xxx/layout/</code> 文件夹：</p>
+<ul>
+<li><code>tags.pug</code> → 支持 <code>type: tags</code></li>
+<li><code>categories.pug</code> → 支持 <code>type: categories</code></li>
+<li><code>links.pug</code> → 支持 <code>type: links</code></li>
+<li><code>message.pug</code> → 支持 <code>type: message</code></li>
+<li><code>archive.pug</code> → 支持 <code>type: archive</code></li>
+</ul>
+<p>当然，你也可以创建 <code>_custom/xxx.pug</code> 来扩展自定义类型。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+        <tag>Butterfly</tag>
       </tags>
   </entry>
 </search>
